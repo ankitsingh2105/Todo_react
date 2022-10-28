@@ -21,3 +21,19 @@ input {
   padding: 4px 9px;
   font-size: 18px;
 }
+.align1 {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 12px;
+}
+.one1 {
+  color: white;
+}
+.one2 {
+  margin-left: 23px;
+}
+.delete {
+  margin-left: 23px;
+}
