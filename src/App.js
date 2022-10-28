@@ -1,4 +1,5 @@
 import "./styles.css";
+import Ank from "./Ank";
 import { useState, useRef, useEffect } from "react";
 export default function App() {
   const [array, setArray] = useState(
@@ -10,6 +11,13 @@ export default function App() {
   const Add = () => {
     setArray((e) => {
       return [...e, one.current.value];
+    });
+  };
+  const deleting = (e) => {
+    setArray((e1) => {
+      return e1.filter((e2, index) => {
+        return index !== e.index - 1; // here
+      });
     });
   };
   const one = useRef(null);
@@ -26,9 +34,7 @@ export default function App() {
         <div className="align">
           {array.map((e, index) => {
             return (
-              <div key={index} index={index + 1} name={e}>
-                {e}
-              </div>
+              <Ank key={index} onSelect={deleting} index={index + 1} name={e} />
             );
           })}
         </div>
